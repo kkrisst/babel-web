@@ -1,0 +1,12 @@
+<img src="resources/background_fruits_large.jpg" width="700" height="560" alt="Planets" usemap="#planetmap">
+
+			<map name="planetmap">
+			  <area class="button" shape="rect" coords="0,0,82,126" href="sun.html" alt="Sun">
+			  <area class="button" shape="rect" coords="200, 200, 390,600" href="mercur.html" alt="Mercury">
+			  <area class="button" shape="circle" coords="124,58,8" href="venus.html" alt="Venus">
+			</map>
+			
+			
+			.interesting {
+	border-style: dotted;
+}
