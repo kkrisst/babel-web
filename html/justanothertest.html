@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>babel</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+    $(".map-areas area").mouseenter(function() {
+        var idx = $(".map-areas area").index(this);
+        $(".map-hovers img:eq(" + idx + ")").show();
+        return false;
+    }).mouseleave(function() {
+        $(".map-hovers img").hide();
+        return false;
+    });
+
+});
+		</script>
+	</head>
+	
+	<body>
+
+<div id="container">
+        <img src="/images/trans.gif" width="220" height="238" class="map-trans" alt="Map / Carte" usemap="#region-map" />
+        <div class="map-hovers">
+            <img src="/images/map/sunset-country.png" alt="Sunset Country" />
+            <img src="/images/map/north-of-superior.png" alt="North of Superior" />
+            <img src="/images/map/algomas-country.png" alt="Algoma's Country" />
+            <img src="/images/map/ontarios-wilderness.png" alt="Ontario's Wilderness" />
+            <img src="/images/map/rainbow-country.png" alt="Rainbow Country" />
+            <img src="/images/map/ontarios-near-north.png" alt="Ontario's Near North" />
+            <img src="/images/map/muskoka.png" alt="Muskoka" />    
+        </div>
+</div>
+    <map name="region-map" id="region-map" class="map-areas">
+    <area shape="poly" coords="52,19,53,82,36,114,34,126,26,130,5,121,2,110,7,62" href="#d0" alt="Sunset Country" />
+    <area shape="poly" coords="93,136,93,113,82,112,77,65,57,51,58,82,41,122,33,133,58,138,74,126" href="#d1" alt="North of Superior" />
+    <area shape="poly" coords="98,112,118,123,131,149,130,165,108,161,97,138" href="#d2" alt="Algoma's Country" />
+    <area shape="poly" coords="68,2,100,29,124,33,133,74,155,96,159,145,134,146,121,119,101,110,83,107,83,65,55,45,54,16" href="#d3" alt="Ontario's Wilderness" />
+    <area shape="poly" coords="151,151,152,167,157,176,152,179,137,178,124,172,133,169,135,150" href="#d4" alt="Rainbow Country" />
+    <area shape="poly" coords="160,150,170,167,169,173,160,171,155,162,153,149" href="#d5" alt="Ontario's Near North" />
+    <area shape="poly" coords="173,176,162,177,154,184,167,189,178,183" href="#d6" alt="Muskoka" />
+    </map>
+	
+			
+	</body>
+</html>
