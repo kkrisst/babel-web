@@ -1,0 +1,70 @@
+<!--
+Yes, this is possible. I've done the exact thing with jquery and the 
+image map area mouseenter / mouseleave events, but not with 70 areas. 
+It will just be more work for you. You may consider loading the images 
+via ajax calls on the mouseover, or using a sprite and positioning so 
+you don't need to load 70 images into the dom.
+
+jquery:
+##################################################################x
+-->
+<!--
+######################################################################x
+Where .map-hovers is a div that has all the images that you want to lay over 
+top of your map. You can position them if necessary, or make the image the 
+same size as the image map, but with transparency.
+
+And some html to follow:
+
+NOTE: Notice how the image map area index lines up with the img index within 
+the map-hovers container? ALSO: The image map must point to a transparent gif, 
+and have the background image set to the actual image you want to display. This 
+is a cross-browser thing - can't remember the exact reason.
+
+############################################################################
+-->
+
+<!DOCTYPE html> 
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>babel</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(".map-areas area").mouseenter(function() {
+					var idx = $(".map-areas area").index(this);
+					$(".map-hovers img:eq(" + idx + ")").show();
+					return false;
+				});
+				$(".map-hovers img").mouseleave(function() {
+					$(".map-hovers img").hide();
+					return false;
+				});
+
+			});
+		</script>
+	</head>
+
+<body>
+<div id="container">
+        <img src="resources/band_background1.png" width="600" height="480" class="map-trans" alt="Map / Carte" usemap="#region-map" />
+        <div class="map-hovers">
+            <img src="resources/band_background1_guitar_highlighted.png" alt="Sunset Country" />  
+        </div>
+</div>
+    <map name="region-map" id="region-map" class="map-areas">
+    <area id="guitar_link" 
+					  alt="Guitar link" 
+					  title="Guitar" 
+					  href="mercur.html" 
+					  shape="poly" 
+					  coords="225,239,233,246,241,263,240,284,232,297,224,307,215,322,214,347,217,380,218,409,219,431,215,453,202,471,
+							  194,479,0,479,1,141,58,135,71,106,80,79,98,62,113,56,125,57,136,65,144,77,146,87,142,94,138,104,141,119,
+							  149,135,167,147,228,61,225,54,225,51,219,41,241,40,246,47,257,48,260,58,264,69,260,74,254,74,252,79,249,
+							  85,246,81,189,219,197,233,208,244,215,244,220,242" />
+    </map>
+	</body>
+</html>

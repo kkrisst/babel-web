@@ -1,29 +1,63 @@
+<!DOCTYPE html> 
 <html>
+
 	<head>
-		<title>Tesztoldal: elso CSS tesztek</title>
-		<link href="css/teststyle.css"
-			   type="text/css"
-			   rel="stylesheet" />
+		<meta charset="utf-8">
+		<title>babel</title>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(".map-areas area").mouseenter(function() {
+					var idx = $(".map-areas area").index(this);
+					$(".map-hovers img:eq(" + idx + ")").show();
+					return false;
+				});
+				$(".map-hovers img").mouseleave(function() {
+					$(".map-hovers img").hide();
+					return false;
+				});
+
+			});
+		</script>
 	</head>
+	
 	<body>
 		<h1>Potatoes</h1>
 		<p id="intro">There are <i>dozens</i> of different <b>potato</b> varieties.</p>
 		<p>They are usually described as early, second early and maincrop potatoes.</p>
 		<hr />
-		<div class="interesting">
-			<a href="sun.html">
-				<div class="bit__overlay">
-					<div class="bit__center-content">
-						<div class="bit__content">
-							<div class="bit__icon-box">
-								<div class="bit-cta">	<p>Watch Segment</p>
-								</div>	<span class="icon-video"></span>
-							</div>	<h3>Will Smith &amp; Jimmy Fallon Beatbox &quot;It Takes Two&quot; Using iPad App</h3>
-						</div>
-					</div>
-				</div>
-				<img src="resources/background_fruits_large.jpg" alt="Will Smith &amp; Jimmy Fallon Beatbox &quot;It Takes Two&quot; Using iPad App" />
-			</a>
+		<br />
+		<div id="container">
+			<img id="band_background_image" src="resources/band_background1.jpg" class="map-trans" border="0" width="600" height="480" orgWidth="600" orgHeight="480" usemap="#background_map" alt="" />
+			<div class="map-hovers">
+				<img src="resources/band_background1_guitar_highlighted.jpg" alt="Guitar" />
+			</div>
 		</div>
+		
+		<div class="interesting">
+			<map name="background_map" id="background_map" class="map-areas">
+				<area id="guitar_link" 
+					  alt="Guitar link" 
+					  title="Guitar" 
+					  href="mercur.html" 
+					  shape="poly" 
+					  coords="225,239,233,246,241,263,240,284,232,297,224,307,215,322,214,347,217,380,218,409,219,431,215,453,202,471,
+							  194,479,0,479,1,141,58,135,71,106,80,79,98,62,113,56,125,57,136,65,144,77,146,87,142,94,138,104,141,119,
+							  149,135,167,147,228,61,225,54,225,51,219,41,241,40,246,47,257,48,260,58,264,69,260,74,254,74,252,79,249,
+							  85,246,81,189,219,197,233,208,244,215,244,220,242" />
+			</map>
+		</div>
+		
 	</body>
 </html>
+
+<!-- 
+#############################################
+<img id="Image-Maps-Com-image-maps-2015-02-09-142704" src="http://www.image-maps.com/m/private/0/4fvi5olnl2ohgg94km7k7etrl1_band_background1.jpg" border="0" width="600" height="480" orgWidth="600" orgHeight="480" usemap="#image-maps-2015-02-09-142704" alt="" />
+<map name="image-maps-2015-02-09-142704" id="ImageMapsCom-image-maps-2015-02-09-142704">
+<area shape="rect" coords="598,478,600,480" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
+<area id="amp_link" alt="Amplifier link" title="AMP" href="sun.html" shape="poly" coords="237,294,260,309,334,288,331,200,324,198,322,171,308,164,238,174,238,202,230,205,230,240,240,249,244,273" style="outline:none;" target="_self"    data-maphilight='wtf??' />
+<area id="guitar_link" alt="Guitar link" title="Guitar" href="http://www.image-maps.com/" shape="poly" coords="225,239,233,246,241,263,240,284,232,297,224,307,215,322,214,347,217,380,218,409,219,431,215,453,202,471,194,479,0,479,1,141,58,135,71,106,80,79,98,62,113,56,125,57,136,65,144,77,146,87,142,94,138,104,141,119,149,135,167,147,228,61,225,54,225,51,219,41,241,40,246,47,257,48,260,58,264,69,260,74,254,74,252,79,249,85,246,81,189,219,197,233,208,244,215,244,220,242" style="outline:none;" target="_self"    data-maphilight='wtf?' />
+</map>
+-->
