@@ -139,9 +139,29 @@
 
 
 
-		clear_canvas = function(canvas) {
+		clear_canvas = function(canvas, context, coords, x_shift, y_shift) {
+			/*$(canvas).css('opacity', 1).animate({opacity: 0}, 230, function(){
+				x_shift = x_shift || 0;
+				y_shift = y_shift || 0;
+				var fixedCoords = [];
+				for(i=0; i < coords.length; i+=2) {
+						fixedCoords[i] = coords[i] + x_shift;
+						fixedCoords[i+1] = coords[i+1] + y_shift;
+				}
+				context.globalCompositeOperation = 'destination-out';
+				context.beginPath();
+				context.moveTo(fixedCoords[0], fixedCoords[1]);
+				for(i=2; i < coords.length; i+=2) {
+					context.lineTo(fixedCoords[i],fixedCoords[i+1]);
+				}
+				context.closePath();
+				context.fill();	
+				//canvas.getContext('2d').clearRect(0, 0, canvas.width,canvas.height);
+			});*/
+			
 			//$(canvas).css('opacity', 1).animate({opacity: 0}, 230, function(){
 				canvas.getContext('2d').clearRect(0, 0, canvas.width,canvas.height);
+				//$(canvas).getContext('2d').clip();
 			//});
 		};
 
@@ -355,7 +375,11 @@
 			$(map).trigger('alwaysOn.maphilight').find('area[coords]')
 				.bind('mouseover.maphilight', mouseover)
 				.bind('mouseout.maphilight', function(e) { 
-					clear_canvas(canvas); 
+					context = canvas.getContext('2d');
+					var x_shift = canvas.width * 100;
+					var y_shift = canvas.height * 100;
+					shape = shape_from_area(this);
+					clear_canvas(canvas, context, shape[1], x_shift, y_shift); 
 				});
 			
 			img.before(canvas); // if we put this after, the mouseover events wouldn't fire.

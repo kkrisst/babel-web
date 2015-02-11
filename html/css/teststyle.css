@@ -1,10 +1,23 @@
-h1 {
-	color: white;
-}
-
-p {
-	color: violet;}
-
 body {
-        background-color: black;
-    }
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;}
+
+#alma {overflow: auto;}
+
+	
+#menu-items1, #menu-items2, #menu-items3 {
+	width: 31.3%;
+	float: left;
+	margin: 1%;}
+	
+#column3 {margin-right: 0%;}
+
+li {
+	display: inline;
+	padding: 0.5em;}
+	
+.menu-items {
+	background-color: #efefef;
+	padding: 0.5em 0;}
+	
