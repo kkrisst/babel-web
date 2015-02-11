@@ -1,6 +1,10 @@
-* {
--moz-outline: 5px dashed orange;
+h1 {
+	color: white;
 }
 
 p {
 	color: violet;}
+
+body {
+        background-color: black;
+    }
