@@ -1,7 +1,8 @@
 body {
 	width: 90%;
 	margin: 0 auto;
-	text-align: center;}
+	text-align: center;
+	background: #413f3b url("images/bg.jpg");}
 
 #alma {overflow: auto;}
 
@@ -11,13 +12,10 @@ body {
 	float: left;
 	margin: 1%;}
 	
-#column3 {margin-right: 0%;}
-
-li {
-	display: inline;
-	padding: 0.5em;}
-	
 .menu-items {
 	background-color: #efefef;
 	padding: 0.5em 0;}
 	
+.map {
+	margin: 0 auto;
+}
